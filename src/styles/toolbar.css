@@ -1,0 +1,27 @@
+.tool-bar {
+    width: 60vw;
+    background-color: #242424;
+    height: 4vh;
+    margin: 0 auto;
+    border-radius: 15px;
+    margin-top: 3em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .tool-bar div {
+    border: 2px white solid;
+    height: 4vh;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    width: 15vw;
+    justify-content: center;
+  }
+  
+  .font-button{
+    width: 3.5vw;
+    height: 3vh;
+    border: white 1px solid;
+    margin: .3em;
+  }
