@@ -3,30 +3,29 @@ import Draggable from "react-draggable";
 
 import Toolbar from './Toolbar';
 import TextArea from './TextArea';
-import styled from 'styled-components';
 
 
 
 function StickyNote(props) {
-  const {x, y, id} = props
+  const {x, y, id, closeNote} = props
 
-  const styledSticky = styled.div`
-  x: ${x};
-  y: ${y};
+//   const styledSticky = styled.div`
+//   x: ${x};
+//   y: ${y};
 
-`
+// `
 
 
 
   return (
-    <Draggable key={id}>
-        <div 
+    <Draggable>
+        <div key={id}
         style={{
-          left: x  + 'px',
-          top: y - 120 + 'px'
+          left: x - 5 + 'px',
+          top: y - 5 + 'px'
         }}
         className='sticky-note'>
-            <Toolbar />
+            <Toolbar closeNote={closeNote} id={id} />
             <TextArea />
         </div>
     </Draggable>

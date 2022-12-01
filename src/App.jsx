@@ -24,13 +24,15 @@ function App() {
   const createNewStickyNote = (e) => {
     console.log(e.pageX, e.pageY)
     const newSticky = {
+      noteId: 1,
       x: e.pageX,
       y: e.pageY,
-      id: Date.now()
     }
     setNotes([...notes, newSticky])
-      
-    
+  }
+
+  const closeNote = (e) => {
+    console.log(e.target.id)
   }
 
   return (
@@ -43,7 +45,7 @@ function App() {
         <h3>Double click to add a sticky note</h3>
         {notes.map(note => {
           return (
-            <StickyNote x={note.x} y={note.y} key={note.id} />
+            <StickyNote key={note.noteId} closeNote={closeNote} x={note.x} y={note.y} id={note.noteId} />
           )
         })}
       </div>
