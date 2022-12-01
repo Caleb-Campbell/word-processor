@@ -20,8 +20,9 @@
   }
   
   .font-button{
-    width: 3.5vw;
+    width: 3vh;
     height: 3vh;
-    border: white 1px solid;
+    border: black 1px solid;
+    border-radius: 5px;
     margin: .3em;
   }

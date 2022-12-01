@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/toolbar.css'
 
 export default function Toolbar(props) {
-  const {textSize, changeFontSize} = props
+  const {textSize, changeFontSize, textColor} = props
 
   return (
     <div className='tool-bar'>
@@ -14,9 +14,13 @@ export default function Toolbar(props) {
     </div>
 
     <div className='font-size-menu'>
-    <label>Font Size: {textSize}em
-    <button onClick={changeFontSize} id='+' className='font-button'>+</button>
-    <button onClick={changeFontSize} id='-' className='font-button'>-</button>
+    <label>Text Color: {textColor}
+    <select value={textColor}>
+      <option value={'white'}>White</option>
+      <option value={'red'}>Red</option>
+      <option value={'blue'}>Blue</option>
+      <option value={'green'}>Green</option>
+    </select>
     </label>
     </div>
 
@@ -33,7 +37,7 @@ export default function Toolbar(props) {
     <button onClick={changeFontSize} id='-' className='font-button'>-</button>
     </label>
     </div>
-    
+
   </div>
   )
 }

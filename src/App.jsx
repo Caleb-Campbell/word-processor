@@ -7,11 +7,18 @@ import TextArea from './components/TextArea'
 
 function App() {
   const [text, setText] = useState('')
-  const [textSize, setTextSize] = useState(1)
+  const [textSize, setTextSize] = useState(3)
+  const [textColor, setTextColor] = useState('white')
 
 
   const changeFontSize = (e) => {
-    e.target.id === '+' ? setTextSize(textSize + 1) : setTextSize(textSize - 1)
+
+    if (e.target.id === '+'){setTextSize(textSize + 1)}
+    else if (e.target.id === '-' && textSize > 1){setTextSize(textSize - 1)}
+  }
+
+  const changeFontColor = (e) => {
+    setTextColor(e.target.value)
   }
 
   return (
@@ -20,8 +27,9 @@ function App() {
       <h1>REGOLITH</h1>
       <h2>A Word Processor by Caleb Campbell</h2>
       </div>
+      <p style={{color: red}}>{textColor}</p>
         <Toolbar textSize={textSize} changeFontSize={changeFontSize} />
-        <TextArea textSize={textSize} text={text} />
+        <TextArea textSize={textSize} text={text} textColor={textColor} />
     </div>
   )
 }
