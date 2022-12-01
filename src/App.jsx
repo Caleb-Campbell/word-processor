@@ -37,7 +37,7 @@ function App() {
     <div className="App">
       <div className='title'>
       <h1>REGOLITH</h1>
-      <h2>A Word Processor by Caleb Campbell</h2>
+      <h2>An Organization App by Caleb Campbell</h2>
       </div>
       <div onDoubleClick={createNewStickyNote} className='workspace'>
         <h3>Double click to add a sticky note</h3>

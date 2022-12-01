@@ -8,7 +8,7 @@ export default function Toolbar(props) {
   return (
     <div className='tool-bar'>
       <button className='toolbar-option'>-</button>
-      <button className='toolbar-option'>+</button>
+      <button className='toolbar-option'>x</button>
   </div>
   )
 }
