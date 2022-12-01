@@ -34,12 +34,14 @@ h2 {
 }
 
 .workspace {
-  height: 68vh;
-  width: 80vw;
+  height: 70vh;
+  width: 90vw;
   background-color: rgb(0,0,0,.7);
   border: #888 solid 4px;
   border-radius: 30px;
   margin: 5em auto;
+
+  overflow: hidden;
 }
 
 h3 {
@@ -54,6 +56,13 @@ body {
   background-size: cover;
   background-position: center center;
   height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.sticky-note{
+  position: absolute;
+
 }
 
 .logo {

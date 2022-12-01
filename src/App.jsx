@@ -8,13 +8,7 @@ function App() {
   const [text, setText] = useState('')
   const [textSize, setTextSize] = useState(2)
   const [textColor, setTextColor] = useState('white')
-  const [notes, setNotes] = useState([
-    {
-      id: Date.now(),
-      x: 100,
-      y: 100
-    }
-  ])
+  const [notes, setNotes] = useState([])
 
 
   const changeFontSize = (e) => {

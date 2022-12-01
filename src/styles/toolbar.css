@@ -1,29 +1,23 @@
-.tool-bar {
-    width: 15vw;
-    background-color: #242424;
-    height: 4vh;
-    margin: 0 auto;
-    border-radius: 15px;
-    margin-top: 3em;
-    display: flex;
-    align-items: center;
-  }
+
+.tool-bar{
+  width: 15vw;
+  padding: .5em;
+  height: 2vh;
+  background-color: gray;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin: 0;
   
-  .tool-bar div {
-    border: 2px white solid;
-    height: 4vh;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    width: 7vw;
-    padding-inline: 1vw;
-    justify-content: center;
-  }
-  
-  .font-button{
-    width: 3vh;
-    height: 3vh;
-    border: black 1px solid;
-    border-radius: 5px;
-    margin: .3em;
-  }
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar-option {
+  background-color: gray;
+  box-shadow: none;
+  border: none;
+  font-size: 1.5em;
+  padding: none;
+}

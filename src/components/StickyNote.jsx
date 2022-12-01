@@ -11,9 +11,8 @@ function StickyNote(props) {
   const {x, y, id} = props
 
   const styledSticky = styled.div`
-  x: ${x || 100};
-  y: ${y || 100};
-
+  x: ${x};
+  y: ${y};
 
 `
 
@@ -21,7 +20,12 @@ function StickyNote(props) {
 
   return (
     <Draggable key={id}>
-        <div className='sticky-note'>
+        <div 
+        style={{
+          left: x  + 'px',
+          top: y - 120 + 'px'
+        }}
+        className='sticky-note'>
             <Toolbar />
             <TextArea />
         </div>
