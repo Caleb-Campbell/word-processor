@@ -5,11 +5,13 @@
     justify-content: center;
 }
 .text-area {
-    width: 80vw;
-    height: 80vh;
+    width: 15vw;
+    height: 15vh;
     opacity: .8;
     margin-top: 10vh;
-    padding: none;
+    padding: .5em;
     display: block;
-    border-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
 }

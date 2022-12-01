@@ -33,12 +33,27 @@ h2 {
   line-height: .1em;
 }
 
+.workspace {
+  height: 68vh;
+  width: 80vw;
+  background-color: rgb(0,0,0,.7);
+  border: #888 solid 4px;
+  border-radius: 30px;
+  margin: 5em auto;
+}
+
+h3 {
+  color: #888;
+  font-family: 'Righteous', cursive;
+}
+
 
 body {
   background-image: url('./assets/regolith.png');
   background-repeat: none;
   background-size: cover;
   background-position: center center;
+  height: 100vh;
 }
 
 .logo {

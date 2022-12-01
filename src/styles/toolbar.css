@@ -1,5 +1,5 @@
 .tool-bar {
-    width: 60vw;
+    width: 15vw;
     background-color: #242424;
     height: 4vh;
     margin: 0 auto;
@@ -15,7 +15,8 @@
     border-radius: 15px;
     display: flex;
     align-items: center;
-    width: 15vw;
+    width: 7vw;
+    padding-inline: 1vw;
     justify-content: center;
   }
   

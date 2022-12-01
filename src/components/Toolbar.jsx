@@ -24,20 +24,6 @@ export default function Toolbar(props) {
     </label>
     </div>
 
-    <div className='font-size-menu'>
-    <label>Font Size: {textSize}em
-    <button onClick={changeFontSize} id='+' className='font-button'>+</button>
-    <button onClick={changeFontSize} id='-' className='font-button'>-</button>
-    </label>
-    </div>
-
-    <div className='font-size-menu'>
-    <label>Font Size: {textSize}em
-    <button onClick={changeFontSize} id='+' className='font-button'>+</button>
-    <button onClick={changeFontSize} id='-' className='font-button'>-</button>
-    </label>
-    </div>
-
   </div>
   )
 }
