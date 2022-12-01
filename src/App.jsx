@@ -27,7 +27,7 @@ function App() {
       <h1>REGOLITH</h1>
       <h2>A Word Processor by Caleb Campbell</h2>
       </div>
-      <p style={{color: red}}>{textColor}</p>
+      <p>{textColor}</p>
         <Toolbar textSize={textSize} changeFontSize={changeFontSize} />
         <TextArea textSize={textSize} text={text} textColor={textColor} />
     </div>
