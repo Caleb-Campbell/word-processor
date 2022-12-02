@@ -9,7 +9,7 @@ function App() {
   const [textSize, setTextSize] = useState(2)
   const [textColor, setTextColor] = useState('white')
   const [notes, setNotes] = useState([])
-
+  const [widget, setwidget] = useState(false)
 
   const changeFontSize = (e) => {
 
@@ -36,12 +36,26 @@ function App() {
     setNotes(newList)
   }
 
+  const handleWidgetButton = () => {
+    setwidget(!widget)
+  }
+
+  
+
   return (
     <div className="App">
       <div className='title'>
       <h1>REGOLITH</h1>
       <h2>An Organization App by Caleb Campbell</h2>
       </div>
+      <div onClick={handleWidgetButton} className='widgets'>
+        <h3>Widgets</h3>
+      </div>
+      {widget && (
+        <div className='widget-list'>
+        </div>
+
+      )}
       <div onDoubleClick={createNewStickyNote} className='workspace'>
         <h3>Double click to add a sticky note</h3>
         {notes.map(note => {

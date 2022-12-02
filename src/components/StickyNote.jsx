@@ -16,9 +16,8 @@ function StickyNote(props) {
 // `
 
 
-
   return (
-    <Draggable>
+    <Draggable >
         <div key={id}
         style={{
           left: x - 5 + 'px',
