@@ -1,12 +1,12 @@
 
 
-.login-wrap{
+.login-wrapper{
     height: 3vh;
     width: 14vw;
     margin: 0 auto;
     margin-top: 1em;
 }
-.login-wrap button {
+.login-wrapper button {
     width: 5vw;
     height: 3vh;
     margin-inline: 1vw;

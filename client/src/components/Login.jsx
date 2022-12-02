@@ -1,10 +1,15 @@
 import React from 'react'
 import '../styles/login.css'
 
-export default function Login(props) {
+export default function Login({loginModal, setLoginModal}) {
+
+    const handleLoginClick = () => {
+        setLoginModal(true)
+    }
+
   return (
-    <div className='login-wrap'>
-        <button>Login</button>
+    <div className='login-wrapper'>
+        <button onClick={handleLoginClick}>Login</button>
         <button>Register</button>
     </div>
   )

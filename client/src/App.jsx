@@ -9,6 +9,7 @@ import Namer from './components/Namer'
 import Widget from './components/Widget'
 import Timer from './components/Timer'
 import Login from './components/Login'
+import LoginModal from './components/LoginModal'
 
 function App() {
   const [text, setText] = useState('')
@@ -20,6 +21,7 @@ function App() {
   const [namer, setNamer] = useState(false)
   const [namerCords, setNamerCords] = useState({})
   const [whatToPlace, setWhatToPlace] = useState('note')
+  const [loginModal, setLoginModal] = useState(false)
   const [widgetPlace, setWidgetPlace] = useState({
     timer: false,
     sketchPad: false
@@ -94,11 +96,12 @@ function App() {
 
   return (
     <div className="App">
+      <LoginModal loginModal={loginModal} setLoginModal={setLoginModal} />
       <div className='title'>
       <h1>REGOLITH</h1>
       <h2>An Organization App by Caleb Campbell</h2>
       </div>
-      <Login />
+      <Login loginModal={loginModal} setLoginModal={setLoginModal} />
       <Widget widget={widget} handleTimerClick={handleTimerClick} handleWidgetButton={handleWidgetButton} />
       {namer && (
         <Namer whatToPlace={whatToPlace} handleNamerSubmit={handleNamerSubmit} x={namerCords.x} y={namerCords.y} />
