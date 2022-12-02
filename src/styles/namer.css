@@ -1,12 +1,24 @@
 .namer-wrap{
     position: absolute;
     width: 20vw;
-    border: 1px solid white;
 }
-
+.namer-wrap * {
+    border-radius: none;
+    border: none;
+}
 .namer {
     width: 16vw;
+    height: 2.5vh;
+    padding-left: 1em;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 .name-submit {
     width: 3vw;
+    height: 2.6vh;
+    
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
 }
