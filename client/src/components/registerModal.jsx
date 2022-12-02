@@ -7,14 +7,14 @@ const backdropVariants = {
     hidden: {opacity: 0}
 }
 
-export default function LoginModal({loginModal, setLoginModal}) {
+export default function RegisterModal({registerModal, setRegisterModal}) {
 
     const closeLogin = () => {
-        setLoginModal(false)
+        setRegisterModal(false)
     }
   return (
     <AnimatePresence exitBeforeEnter>
-        {loginModal && (
+        {registerModal && (
             <motion.div
             variants={backdropVariants}
             initial='hidden'
@@ -22,8 +22,7 @@ export default function LoginModal({loginModal, setLoginModal}) {
             className='backdrop'>
                     <button onClick={closeLogin} className='close-login'>x</button>
                 <div className='login-wrap'>
-                <h3 className='login-h'>Login</h3>
-
+                    <h3 className='login-h'>Register</h3>
                     <form>
                         <label className='input-text-label'> Username
                         <input className='input-text' type="text" />

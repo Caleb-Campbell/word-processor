@@ -10,6 +10,7 @@ import Widget from './components/Widget'
 import Timer from './components/Timer'
 import Login from './components/Login'
 import LoginModal from './components/LoginModal'
+import RegisterModal from './components/registerModal'
 
 function App() {
   const [text, setText] = useState('')
@@ -22,6 +23,7 @@ function App() {
   const [namerCords, setNamerCords] = useState({})
   const [whatToPlace, setWhatToPlace] = useState('note')
   const [loginModal, setLoginModal] = useState(false)
+  const [registerModal, setRegisterModal] = useState(false)
   const [widgetPlace, setWidgetPlace] = useState({
     timer: false,
     sketchPad: false
@@ -68,7 +70,6 @@ function App() {
     if(widgetPlace.timer){placeTimer(name, duration, e.pageX, e.pageY)}
   }
 
-
   const handleTimerClick = () => {
     setWidgetPlace({...widgetPlace, timer: true})
     setWhatToPlace('timer')
@@ -97,11 +98,12 @@ function App() {
   return (
     <div className="App">
       <LoginModal loginModal={loginModal} setLoginModal={setLoginModal} />
+      <RegisterModal registerModal={registerModal} setRegisterModal={setRegisterModal} />
       <div className='title'>
       <h1>REGOLITH</h1>
       <h2>An Organization App by Caleb Campbell</h2>
       </div>
-      <Login loginModal={loginModal} setLoginModal={setLoginModal} />
+      <Login loginModal={loginModal} setLoginModal={setLoginModal} registerModal={registerModal} setRegisterModal={setRegisterModal} />
       <Widget widget={widget} handleTimerClick={handleTimerClick} handleWidgetButton={handleWidgetButton} />
       {namer && (
         <Namer whatToPlace={whatToPlace} handleNamerSubmit={handleNamerSubmit} x={namerCords.x} y={namerCords.y} />
