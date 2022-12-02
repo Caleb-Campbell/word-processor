@@ -5,7 +5,7 @@ import '../styles/namer.css'
 
 
 export default function Namer(props) {
-    const {x, y, handleNamerSubmit} = props
+    const {x, y, handleNamerSubmit, whatToPlace} = props
     
     const [input, setInput] = useState('')
 
@@ -16,6 +16,8 @@ export default function Namer(props) {
     const handleSubmit = (e) => {
         handleNamerSubmit(e, input)
     }
+
+    const placeholder = `name your ${whatToPlace}...`
     
   return (
     <div className='namer-wrap'
@@ -29,7 +31,7 @@ export default function Namer(props) {
         className='namer'
         onChange={handleChange}
         value={input}
-        name='namer' placeholder='Name your note...'></input>
+        name='namer' placeholder={placeholder}></input>
         <button onClick={handleSubmit} className='name-submit'>+</button>
         </div>
         

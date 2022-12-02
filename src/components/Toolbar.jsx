@@ -4,8 +4,6 @@ import '../styles/toolbar.css'
 export default function Toolbar(props) {
   const { deleteNote, id, name } = props
 
-
-
   return (
     <div className='tool-bar'>
       <button  className='toolbar-option'>-</button>
