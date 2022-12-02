@@ -1,0 +1,21 @@
+
+
+.login-wrap{
+    height: 3vh;
+    width: 14vw;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+.login-wrap button {
+    width: 5vw;
+    height: 3vh;
+    margin-inline: 1vw;
+    border: 2px solid #a3a1a1;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-wrap button:hover {
+    transition: .4s ease;
+    box-shadow: 2px 2px 2px 2px rgb(122, 121, 121);
+}
