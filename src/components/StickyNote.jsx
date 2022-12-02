@@ -7,7 +7,7 @@ import TextArea from './TextArea';
 
 
 function StickyNote(props) {
-  const {x, y, id, deleteNote} = props
+  const {x, y, id, deleteNote, name} = props
 
 //   const styledSticky = styled.div`
 //   x: ${x};
@@ -24,7 +24,7 @@ function StickyNote(props) {
           top: y - 5 + 'px'
         }}
         className='sticky-note'>
-            <Toolbar deleteNote={deleteNote} id={id} />
+            <Toolbar name={name} deleteNote={deleteNote} id={id} />
             <TextArea />
         </div>
     </Draggable>

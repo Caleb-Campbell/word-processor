@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 
 import StickyNote from './components/StickyNote'
+import Namer from './components/Namer'
 
 function App() {
   const [text, setText] = useState('')
@@ -10,6 +11,8 @@ function App() {
   const [textColor, setTextColor] = useState('white')
   const [notes, setNotes] = useState([])
   const [widget, setwidget] = useState(false)
+  const [namer, setNamer] = useState(false)
+  const [namerCords, setNamerCords] = useState({})
 
   const changeFontSize = (e) => {
 
@@ -21,10 +24,24 @@ function App() {
     setTextColor(e.target.value)
   }
 
-  const createNewStickyNote = (e) => {
+  const handleDoubleClick = (e) => {
+    setNamer(!namer)
+    setNamerCords({
+      x: e.pageX,
+      y: e.pageY,
+    })
+  }
+
+  const handleNamerSubmit = (e, name) => {
+    setNamer(false)
+    createNewStickyNote(e, name)
+  }
+
+  const createNewStickyNote = (e, name) => {
     console.log(e.pageX, e.pageY)
     const newSticky = {
       id: Date.now(),
+      name: name,
       x: e.pageX,
       y: e.pageY,
     }
@@ -54,13 +71,16 @@ function App() {
       {widget && (
         <div className='widget-list'>
         </div>
-
       )}
-      <div onDoubleClick={createNewStickyNote} className='workspace'>
+      {namer && (
+        <Namer handleNamerSubmit={handleNamerSubmit} x={namerCords.x} y={namerCords.y} />
+      )}
+      <div onDoubleClick={handleDoubleClick} className='workspace'>
         <h3>Double click to add a sticky note</h3>
+        
         {notes.map(note => {
           return (
-            <StickyNote key={note.id} deleteNote={deleteNote} x={note.x} y={note.y} id={note.id} />
+            <StickyNote key={note.id} name={note.name} deleteNote={deleteNote} x={note.x} y={note.y} id={note.id} />
           )
         })}
       </div>

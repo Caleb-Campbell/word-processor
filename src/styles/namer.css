@@ -1,0 +1,12 @@
+.namer-wrap{
+    position: absolute;
+    width: 20vw;
+    border: 1px solid white;
+}
+
+.namer {
+    width: 16vw;
+}
+.name-submit {
+    width: 3vw;
+}
