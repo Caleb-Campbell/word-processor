@@ -2,13 +2,14 @@ import React from 'react'
 import '../styles/toolbar.css'
 
 export default function Toolbar(props) {
-  const { closeNote } = props
+  const { deleteNote, id } = props
+
 
 
   return (
     <div className='tool-bar'>
-      <button className='toolbar-option'>-</button>
-      <button onClick={closeNote} className='toolbar-option'>x</button>
+      <button  className='toolbar-option'>-</button>
+      <button onClick={deleteNote} id={id} className='toolbar-option'>x</button>
   </div>
   )
 }
