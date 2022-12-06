@@ -22,6 +22,7 @@ function App() {
   const [whatToPlace, setWhatToPlace] = useState('note')
   const [loginModal, setLoginModal] = useState(false)
   const [registerModal, setRegisterModal] = useState(false)
+  const [message, setMessage] = useState('')
   const [widgetPlace, setWidgetPlace] = useState({
     timer: false,
     sketchPad: false
@@ -93,15 +94,20 @@ function App() {
     else {return 'Double click to add sticky note'}
   }
 
+  const handleLogin = () => {
+    axios.post('http://localhost:9000/api/users/login')
+  }
+
   return (
     <div className="App">
-      <LoginModal loginModal={loginModal} setLoginModal={setLoginModal} />
+      <LoginModal handleLogin={handleLogin} loginModal={loginModal} setLoginModal={setLoginModal} />
       <RegisterModal registerModal={registerModal} setRegisterModal={setRegisterModal} />
       <div className='title'>
       <h1>REGOLITH</h1>
       <h2>An Organization App by Caleb Campbell</h2>
       </div>
       <Login loginModal={loginModal} setLoginModal={setLoginModal} registerModal={registerModal} setRegisterModal={setRegisterModal} />
+      <h3 className='message'>{message}</h3>
       <Widget widget={widget} handleTimerClick={handleTimerClick} handleWidgetButton={handleWidgetButton} />
       {namer && (
         <Namer whatToPlace={whatToPlace} handleNamerSubmit={handleNamerSubmit} x={namerCords.x} y={namerCords.y} />
