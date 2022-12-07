@@ -1,5 +1,6 @@
 
 .tool-bar{
+  position: absolute;
   width: 15vw;
   padding: .5em;
   height: 2vh;
