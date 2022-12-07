@@ -3,6 +3,7 @@ import '../styles/login.css'
 
 export default function Login({loginModal, setLoginModal, registerModal, setRegisterModal}) {
 
+
     const handleLoginClick = () => {
         setLoginModal(true)
     }

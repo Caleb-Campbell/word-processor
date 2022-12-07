@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../styles/modals.css'
 import {motion, AnimatePresence} from 'framer-motion'
 
@@ -7,11 +7,32 @@ const backdropVariants = {
     hidden: {opacity: 0}
 }
 
-export default function LoginModal({loginModal, setLoginModal}) {
+export default function LoginModal({loginModal, setLoginModal, handleLogin}) {
+
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
 
     const closeLogin = () => {
         setLoginModal(false)
     }
+
+    const loginSubmit = () => {
+
+    }
+
+    const handleChange = (e) => {
+        e.target.name === 'username' ? setUsername(e.target.value) : setPassword(e.target.value)
+    }
+
+    const hidePassword = (input) => {
+        let result = ''
+        input.forEach(letter => {
+            result = result + '*'
+        })
+        return result
+    }
+
+
   return (
     <AnimatePresence exitBeforeEnter>
         {loginModal && (
@@ -26,10 +47,10 @@ export default function LoginModal({loginModal, setLoginModal}) {
 
                     <form>
                         <label className='input-text-label'> Username
-                        <input className='input-text' type="text" />
+                        <input onChange={handleChange} name='username' value={username} className='input-text' type="text" />
                         </label>
                         <label className='input-text-label'> Password
-                        <input className='input-text' type="text" />
+                        <input onChange={handleChange} name='password' value={()=> {hidePassword(password)}} className='input-text' type="text" />
                         </label>
                         <input className='login-submit' type='submit' />
                     </form>

@@ -48,6 +48,13 @@ h3 {
   font-family: 'Righteous', cursive;
 }
 
+.message{
+  color: red;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
 
 body {
   background-image: url('./assets/regolith.png');
